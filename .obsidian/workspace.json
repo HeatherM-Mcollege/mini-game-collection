@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "a5a0dcd4ce039826",
+    "type": "split",
+    "children": [
+      {
+        "id": "ec8689f3f0c258a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0ab159cb6b690525",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Documentation"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eb1de2b105afc93f",
+    "type": "split",
+    "children": [
+      {
+        "id": "22a6d43cf351a879",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4bf8517e0231b07",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "29b99034c40bfce8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d52793fe2b658b57",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c4ba8fa71acdc88d",
+    "type": "split",
+    "children": [
+      {
+        "id": "e208cca643fd8cfe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2dea8c4357bf4bc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Documentation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "6563f5926d829fd2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Documentation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "1c7b2b2e20417b9f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ddcc3e22a7b03b4c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "61c6caa3ab06e897",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Documentation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "0ab159cb6b690525",
+  "lastOpenFiles": [
+    "studio-wide_level-process-work.jpeg",
+    "LEVEL.png",
+    "Screenshot 2026-11-11 172718.png",
+    "Documentation.md",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/TagPlayer.cs.meta",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/TagPlayer.cs",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/PlayerID.cs",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/PlayerID.cs.meta",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/PlayerController.cs.meta",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scripts/PlayerController.cs",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Prefabs/Mini Game UI.prefab.meta",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Prefabs/Mini Game UI.prefab",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scenes/team01-LevelOne.unity.meta",
+    "unity-project/mini-game-collection/Assets/2026/team01/team01-Scenes/team01-LevelOne.unity"
+  ]
+}
