@@ -12,6 +12,8 @@ namespace MiniGameCollection.Games2026.Team01
         [field: SerializeField] public float Accel { get; private set;  }
         [field: SerializeField] public float Decel { get; private set;  }
 
+        public List<GameObject> currentTask;
+
         private float AxisX;
         private float AxisY;
         
@@ -64,6 +66,13 @@ namespace MiniGameCollection.Games2026.Team01
             velocity.x = Mathf.MoveTowards(velocity.x, targetX, rateX * Time.fixedDeltaTime);
             velocity.y = Mathf.MoveTowards(velocity.y, targetY, rateY * Time.fixedDeltaTime);
             Rigidbody2D.velocity = velocity;
+
+            // Check for if player has a tool and wants to drop it
+            if (ArcadeInput.Players[(int)PlayerID].Action2.Pressed && transform.GetComponentInChildren<ToolScript>())
+            {
+                ToolScript toolHeld = GetComponentInChildren<ToolScript>();
+                toolHeld.Drop();
+            }
         }
         protected override void OnEnable()
         {
