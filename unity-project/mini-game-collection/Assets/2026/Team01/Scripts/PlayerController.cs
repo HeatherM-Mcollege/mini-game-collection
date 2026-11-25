@@ -7,7 +7,6 @@ namespace MiniGameCollection.Games2026.Team01
     public class PlayerController : MiniGameBehaviour
     {
         [field: SerializeField] public PlayerID PlayerID { get; private set; }
-        [field: SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
         [field: SerializeField] public float PlayerSpeed { get; private set;  }
         [field: SerializeField] public float Accel { get; private set;  }
         [field: SerializeField] public float Decel { get; private set;  }
@@ -18,10 +17,17 @@ namespace MiniGameCollection.Games2026.Team01
 
         private float AxisX;
         private float AxisY;
+
+        private Animator animator;
+        private Rigidbody2D rb2d;
+        private Transform hand;
         
         void Awake()
         {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
+            hand = transform.Find("Hand");
+            animator = GetComponentInChildren<Animator>();
+            rb2d = GetComponent<Rigidbody2D>();
+            Debug.Log(animator.ToString() + PlayerID);
         }
         void Update()
         {
@@ -41,7 +47,7 @@ namespace MiniGameCollection.Games2026.Team01
             Vector2 movement = new Vector2(AxisX, AxisY);
             movement.Normalize();
 
-            Vector2 velocity = Rigidbody2D.velocity;
+            Vector2 velocity = rb2d.velocity;
             float targetX = movement.x * PlayerSpeed;
             float rateX;
             float targetY = movement.y * PlayerSpeed;
@@ -67,18 +73,34 @@ namespace MiniGameCollection.Games2026.Team01
             }
             velocity.x = Mathf.MoveTowards(velocity.x, targetX, rateX * Time.fixedDeltaTime);
             velocity.y = Mathf.MoveTowards(velocity.y, targetY, rateY * Time.fixedDeltaTime);
-            Rigidbody2D.velocity = velocity;
+            rb2d.velocity = velocity;
 
             // Check for if player has a tool and wants to drop it
-            if (ArcadeInput.Players[(int)PlayerID].Action2.Pressed && transform.GetComponentInChildren<ToolScript>())
+            if (ArcadeInput.Players[(int)PlayerID].Action2.Pressed && hand.GetComponentInChildren<ToolScript>())
             {
                 ToolScript toolHeld = GetComponentInChildren<ToolScript>();
                 toolHeld.Drop();
+            }
+            // Check for if player has a tool and wants to swing it
+            if (ArcadeInput.Players[(int)PlayerID].Action1.Pressed && hand.GetComponentInChildren<ToolScript>())
+            {
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                {
+                    Swing();
+                }
             }
         }
         protected override void OnEnable()
         {
             
+        }
+        public void Swing()
+        {
+            Debug.Log($"Swing here for {PlayerID}");
+
+            // Animation
+
+            animator.SetTrigger("Swing");
         }
     }
 }
