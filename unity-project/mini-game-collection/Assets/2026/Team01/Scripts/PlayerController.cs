@@ -21,6 +21,8 @@ namespace MiniGameCollection.Games2026.Team01
         private Animator animator;
         private Rigidbody2D rb2d;
         private Transform hand;
+        private GameObject currentTouching;
+        private GameObject currentTool;
         
         void Awake()
         {
@@ -40,6 +42,8 @@ namespace MiniGameCollection.Games2026.Team01
             // Always scale the player back to (1, 1, 1)
             Vector3 targetMove = new Vector3(SpriteSize, SpriteSize, SpriteSize);
             if (transform.localScale != targetMove) { transform.localScale = Vector3.Lerp(transform.localScale, targetMove, 10f * Time.deltaTime); }
+
+            
         }
         void FixedUpdate()
         {
@@ -84,9 +88,31 @@ namespace MiniGameCollection.Games2026.Team01
             // Check for if player has a tool and wants to swing it
             if (ArcadeInput.Players[(int)PlayerID].Action1.Pressed && hand.GetComponentInChildren<ToolScript>())
             {
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                Swing();
+            }
+            // Update current tool
+            if (hand.Find("Handle") != null)
+            {
+                currentTool = hand.Find("Handle").GetComponentInChildren<ToolScript>().gameObject;
+                
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            // Filter out tools and players
+            if (!col.gameObject.GetComponent<ToolScript>() && !col.gameObject.GetComponent<PlayerController>())
+            {
+                currentTouching = col.gameObject;
+            }
+        }
+        private void OnTriggerExit2D(Collider2D col)
+        {
+            // Filter out tools and players
+            if (!col.gameObject.GetComponent<ToolScript>() && !col.gameObject.GetComponent<PlayerController>())
+            {
+                if (currentTouching == col.gameObject)
                 {
-                    Swing();
+                    currentTouching = null;
                 }
             }
         }
@@ -99,8 +125,38 @@ namespace MiniGameCollection.Games2026.Team01
             Debug.Log($"Swing here for {PlayerID}");
 
             // Animation
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                animator.SetTrigger("Swing");
+            }
 
-            animator.SetTrigger("Swing");
+            if (currentTouching != null)
+            {
+                string currentTouchingName = currentTouching.name;
+                // Swing at Axe
+                if (currentTouchingName == "Tree" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Axe")
+                {
+                    currentTouching.SetActive(false);
+
+                }
+                // Swing at Weed
+                if (currentTouchingName == "Rock" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Pickaxe")
+                {
+                    currentTouching.SetActive(false);
+                }
+                // Swing at Axe
+                if (currentTouchingName == "Dig" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Shovel")
+                {
+                    currentTouching.SetActive(false);
+                }
+                // Swing at Axe
+                if (currentTouchingName == "Weed" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Hoe")
+                {
+                    currentTouching.SetActive(false);
+                }
+            }
+            
+
         }
     }
 }
