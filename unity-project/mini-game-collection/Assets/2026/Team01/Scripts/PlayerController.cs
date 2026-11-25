@@ -12,6 +12,8 @@ namespace MiniGameCollection.Games2026.Team01
         [field: SerializeField] public float Accel { get; private set;  }
         [field: SerializeField] public float Decel { get; private set;  }
 
+        [field: SerializeField] public float SpriteSize { get; private set; }
+
         public List<GameObject> currentTask;
 
         private float AxisX;
@@ -30,7 +32,7 @@ namespace MiniGameCollection.Games2026.Team01
 
 
             // Always scale the player back to (1, 1, 1)
-            Vector3 targetMove = new Vector3(1.0f, 1.0f, 1.0f);
+            Vector3 targetMove = new Vector3(SpriteSize, SpriteSize, SpriteSize);
             if (transform.localScale != targetMove) { transform.localScale = Vector3.Lerp(transform.localScale, targetMove, 10f * Time.deltaTime); }
         }
         void FixedUpdate()
