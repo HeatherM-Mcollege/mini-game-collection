@@ -3477,6 +3477,7 @@ MonoBehaviour:
   currentTask: 0
   lastTask: 0
   Score: 0
+  SpeedBoost: 0
 --- !u!50 &380084708
 Rigidbody2D:
   serializedVersion: 4
@@ -23124,12 +23125,13 @@ MonoBehaviour:
   <PlayerID>k__BackingField: 0
   <GameOrganizer>k__BackingField: {fileID: 514255914}
   <PlayerSpeed>k__BackingField: 7.5
-  <Accel>k__BackingField: 90
-  <Decel>k__BackingField: 110
+  <Accel>k__BackingField: 160
+  <Decel>k__BackingField: 180
   <SpriteSize>k__BackingField: 1.5
   currentTask: 0
   lastTask: 0
   Score: 0
+  SpeedBoost: 0
 --- !u!50 &1084593807
 Rigidbody2D:
   serializedVersion: 4
@@ -23607,6 +23609,7 @@ MonoBehaviour:
   currentTask: 0
   lastTask: 0
   Score: 0
+  SpeedBoost: 0
 --- !u!50 &1200490904
 Rigidbody2D:
   serializedVersion: 4
@@ -24674,12 +24677,13 @@ MonoBehaviour:
   <PlayerID>k__BackingField: 1
   <GameOrganizer>k__BackingField: {fileID: 514255914}
   <PlayerSpeed>k__BackingField: 7.5
-  <Accel>k__BackingField: 90
-  <Decel>k__BackingField: 110
+  <Accel>k__BackingField: 160
+  <Decel>k__BackingField: 180
   <SpriteSize>k__BackingField: 1.5
   currentTask: 0
   lastTask: 0
   Score: 0
+  SpeedBoost: 0
 --- !u!50 &1693341717
 Rigidbody2D:
   serializedVersion: 4
@@ -26502,6 +26506,74 @@ Transform:
   - {fileID: 577830883}
   m_Father: {fileID: 750025080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &162249253395039372
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 905051027872716046, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_Name
+      value: Powerup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544685159641874632, guid: 75c15ea582dccf44ca8a3753b6f01c33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75c15ea582dccf44ca8a3753b6f01c33, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -26513,3 +26585,4 @@ SceneRoots:
   - {fileID: 267203611}
   - {fileID: 1242396069}
   - {fileID: 514255915}
+  - {fileID: 162249253395039372}

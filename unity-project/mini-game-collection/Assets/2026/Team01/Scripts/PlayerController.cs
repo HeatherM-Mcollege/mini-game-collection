@@ -35,6 +35,7 @@ namespace MiniGameCollection.Games2026.Team01
         public TaskType currentTask;
         public TaskType lastTask;
         public int Score;
+        public float SpeedBoost;
         
         void Awake()
         {
@@ -44,6 +45,7 @@ namespace MiniGameCollection.Games2026.Team01
             Debug.Log(animator.ToString() + PlayerID);
             currentTask = TaskType.None;
             lastTask = TaskType.None;
+            SpeedBoost = 0;
         }
         void Update()
         {
@@ -66,9 +68,9 @@ namespace MiniGameCollection.Games2026.Team01
             movement.Normalize();
 
             Vector2 velocity = rb2d.velocity;
-            float targetX = movement.x * PlayerSpeed;
+            float targetX = movement.x * (PlayerSpeed + SpeedBoost);
             float rateX;
-            float targetY = movement.y * PlayerSpeed;
+            float targetY = movement.y * (PlayerSpeed + SpeedBoost);
             float rateY;
             // Check if the player is moving at ALL
             if (Mathf.Abs(AxisX) > 0.01f || Mathf.Abs(AxisY) > 0.01f)
