@@ -7,13 +7,13 @@ namespace MiniGameCollection.Games2026.Team01
     public class PlayerController : MiniGameBehaviour
     {
         [field: SerializeField] public PlayerID PlayerID { get; private set; }
+        [field: SerializeField] public GameOrganizer GameOrganizer { get; private set; }
         [field: SerializeField] public float PlayerSpeed { get; private set;  }
         [field: SerializeField] public float Accel { get; private set;  }
         [field: SerializeField] public float Decel { get; private set;  }
 
         [field: SerializeField] public float SpriteSize { get; private set; }
 
-        public List<GameObject> currentTask;
 
         private float AxisX;
         private float AxisY;
@@ -23,6 +23,18 @@ namespace MiniGameCollection.Games2026.Team01
         private Transform hand;
         private GameObject currentTouching;
         private GameObject currentTool;
+
+        public enum TaskType
+        {
+            None,
+            Tree,
+            Rock,
+            Mushroom,
+            Weed
+        }
+        public TaskType currentTask;
+        public TaskType lastTask;
+        public int Score;
         
         void Awake()
         {
@@ -30,6 +42,8 @@ namespace MiniGameCollection.Games2026.Team01
             animator = GetComponentInChildren<Animator>();
             rb2d = GetComponent<Rigidbody2D>();
             Debug.Log(animator.ToString() + PlayerID);
+            currentTask = TaskType.None;
+            lastTask = TaskType.None;
         }
         void Update()
         {
@@ -122,7 +136,7 @@ namespace MiniGameCollection.Games2026.Team01
         }
         public void Swing()
         {
-            Debug.Log($"Swing here for {PlayerID}");
+            // Debug.Log($"Swing here for {PlayerID}");
 
             // Animation
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -137,22 +151,29 @@ namespace MiniGameCollection.Games2026.Team01
                 if (currentTouchingName == "Tree" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Axe")
                 {
                     currentTouching.SetActive(false);
+                    GameOrganizer.CheckList(GameOrganizer.treeList);
 
                 }
                 // Swing at Weed
                 if (currentTouchingName == "Rock" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Pickaxe")
                 {
                     currentTouching.SetActive(false);
+                    GameOrganizer.CheckList(GameOrganizer.rockList);
+
                 }
                 // Swing at Axe
                 if (currentTouchingName == "Dig" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Shovel")
                 {
                     currentTouching.SetActive(false);
+                    GameOrganizer.CheckList(GameOrganizer.mushroomList);
+
                 }
                 // Swing at Axe
                 if (currentTouchingName == "Weed" && ArcadeInput.Players[(int)PlayerID].Action1.Pressed && currentTool.name == "Hoe")
                 {
                     currentTouching.SetActive(false);
+                    GameOrganizer.CheckList(GameOrganizer.weedList);
+
                 }
             }
             

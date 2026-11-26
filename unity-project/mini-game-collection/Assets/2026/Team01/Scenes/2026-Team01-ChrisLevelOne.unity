@@ -3193,11 +3193,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MiniGameManager>k__BackingField: {fileID: 267203613}
   <PlayerID>k__BackingField: 0
+  <GameOrganizer>k__BackingField: {fileID: 0}
   <PlayerSpeed>k__BackingField: 7.5
   <Accel>k__BackingField: 90
   <Decel>k__BackingField: 110
   <SpriteSize>k__BackingField: 0
-  currentTask: []
+  currentTask: 0
+  lastTask: 0
+  Score: 0
 --- !u!50 &380084708
 Rigidbody2D:
   serializedVersion: 4
@@ -3447,6 +3450,62 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 491490476}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &514255913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514255915}
+  - component: {fileID: 514255914}
+  m_Layer: 0
+  m_Name: Game Organizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &514255914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514255913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5023f6816016c24e9719d327907ce13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MiniGameManager>k__BackingField: {fileID: 267203613}
+  <TreeParent>k__BackingField: {fileID: 1020517228}
+  <RockParent>k__BackingField: {fileID: 2057707666}
+  <MushroomParent>k__BackingField: {fileID: 472763891}
+  <WeedParent>k__BackingField: {fileID: 584344946}
+  <Player1>k__BackingField: {fileID: 1084593806}
+  <Player2>k__BackingField: {fileID: 1693341716}
+  <TaskRespawnTimer>k__BackingField: 3
+  treeList: []
+  rockList: []
+  mushroomList: []
+  weedList: []
+--- !u!4 &514255915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514255913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0662162, y: 0.36977804, z: -0.5275785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &577751869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 178934275902014517, guid: c5c2f6463bad23746bb836646b1aa912,
@@ -22783,11 +22842,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MiniGameManager>k__BackingField: {fileID: 267203613}
   <PlayerID>k__BackingField: 0
+  <GameOrganizer>k__BackingField: {fileID: 514255914}
   <PlayerSpeed>k__BackingField: 7.5
   <Accel>k__BackingField: 90
   <Decel>k__BackingField: 110
   <SpriteSize>k__BackingField: 1.5
-  currentTask: []
+  currentTask: 0
+  lastTask: 0
+  Score: 0
 --- !u!50 &1084593807
 Rigidbody2D:
   serializedVersion: 4
@@ -23257,11 +23319,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MiniGameManager>k__BackingField: {fileID: 267203613}
   <PlayerID>k__BackingField: 1
+  <GameOrganizer>k__BackingField: {fileID: 0}
   <PlayerSpeed>k__BackingField: 7.5
   <Accel>k__BackingField: 90
   <Decel>k__BackingField: 110
   <SpriteSize>k__BackingField: 0
-  currentTask: []
+  currentTask: 0
+  lastTask: 0
+  Score: 0
 --- !u!50 &1200490904
 Rigidbody2D:
   serializedVersion: 4
@@ -24175,11 +24240,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MiniGameManager>k__BackingField: {fileID: 267203613}
   <PlayerID>k__BackingField: 1
+  <GameOrganizer>k__BackingField: {fileID: 514255914}
   <PlayerSpeed>k__BackingField: 7.5
   <Accel>k__BackingField: 90
   <Decel>k__BackingField: 110
   <SpriteSize>k__BackingField: 1.5
-  currentTask: []
+  currentTask: 0
+  lastTask: 0
+  Score: 0
 --- !u!50 &1693341717
 Rigidbody2D:
   serializedVersion: 4
@@ -25658,3 +25726,4 @@ SceneRoots:
   - {fileID: 2063822289}
   - {fileID: 267203611}
   - {fileID: 1242396069}
+  - {fileID: 514255915}
