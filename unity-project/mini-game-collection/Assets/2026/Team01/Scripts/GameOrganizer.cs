@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,10 @@ namespace MiniGameCollection.Games2026.Team01
         [field: SerializeField] public GameObject WeedParent { get; private set; }
         [field: SerializeField] public PlayerController Player1 { get; private set; }
         [field: SerializeField] public PlayerController Player2 { get; private set; }
+        [field: SerializeField] public TMP_Text Player1ScoreText { get; private set; }
+        [field: SerializeField] public TMP_Text Player2ScoreText { get; private set; }
+        [field: SerializeField] public TMP_Text Player1TaskText { get; private set; }
+        [field: SerializeField] public TMP_Text Player2TaskText { get; private set; }
         [field: SerializeField] public float TaskRespawnTimer { get; private set; }
         public List<GameObject> treeList;
         public List<GameObject> rockList;
@@ -21,7 +26,7 @@ namespace MiniGameCollection.Games2026.Team01
         public List<GameObject> weedList;
         private Dictionary<int, bool> TaskStates;
 
-        void Awake()
+        private void Awake()
         {
             TaskStates = new Dictionary<int, bool>
             {
@@ -31,7 +36,7 @@ namespace MiniGameCollection.Games2026.Team01
                 {4, true }  // Weed
             };
         }
-        void Start()
+        private void Start()
         {
             foreach (Transform child in TreeParent.transform)
             {
@@ -52,6 +57,25 @@ namespace MiniGameCollection.Games2026.Team01
 
             SetTask(Player1);
             SetTask(Player2);
+        }
+
+        private void Update()
+        {
+            // Check Scoring
+            Player1ScoreText.text = $"Score: {Player1.Score.ToString()}";
+            Player2ScoreText.text = $"Score: {Player2.Score.ToString()}";
+        }
+        protected override void OnGameEnd()
+        { 
+            // Learned that I don't need {}'s after all this time !?? crazy
+            if (Player1.Score == Player2.Score)
+                MiniGameManager.Winner = MiniGameWinner.Draw;
+            else if (Player1.Score > Player2.Score)
+                MiniGameManager.Winner = MiniGameWinner.Player1;
+            else if (Player1.Score < Player2.Score)
+                MiniGameManager.Winner = MiniGameWinner.Player2;
+            else
+                throw new NotImplementedException();
         }
         // Call this when a player breaks an object
         public bool CheckList(List<GameObject> list)
@@ -140,6 +164,10 @@ namespace MiniGameCollection.Games2026.Team01
                     }
                 }
                 Player.currentTask = giveTask;
+                if (Player == Player1)
+                    Player1TaskText.text = Player.currentTask.ToString();
+                else if (Player == Player2)
+                    Player2TaskText.text = Player.currentTask.ToString();
                 Debug.Log($"{Player} got task {giveTask}");
                 
             }
