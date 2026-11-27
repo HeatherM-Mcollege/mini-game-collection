@@ -20,7 +20,8 @@
      1. LEVEL STRUCTURE
      2. UI INTERFACE
 5. RESOURCES
-6. TEAM
+6. STORY
+7. TEAM
 
 ## 1. GAMEPLAY
 
@@ -42,8 +43,6 @@ Players will be pitted against each other competing for items to complete their 
 
 - Tilling soil
 
-- Finding Keys (tbd)
-
 ### iii. PLAYERS
 
 This game is multiplayer, allowing for 2 players to face off. Both players will compete in the same game arena.
@@ -56,13 +55,9 @@ Grabbable Objects:
 
 -          Pick-axe
 
--          Scythe
-
 -          Shovel
 
 -          Tilling Hoe
-
--          Key
 
 Destructible Objects:
 
@@ -74,24 +69,20 @@ Destructible Objects:
 
 -          Mushrooms
 
--          Rough Soil
-
 ### v. CONTROLS
 
-- 8-way Joystick
+- 8-way Joystick for movement
 
-- 2 Buttons (Primary Action / Secondary Action)
-
-- tbd
+- 2 Buttons (Primary Action - Pickup/Drop  / Secondary Action - Use Tool)
 
 
 ### vi. GAMEPLAY LOOP
 
-tbd
+Players will be given a task and compete to finish it first. For example “Cut 8 trees”. On completing a task, their next task will generate going through all 4 tasks. The first player to complete all tasks wins the game.
 
 ### vii. SCORE SYSTEM
 
-tbd
+Score is relevant to the amount of tasks/actions in task completed times current game time.
 
 ### viii. GAME SYSTEM
 
@@ -99,7 +90,7 @@ Arcade Cabinet
 
 ## 2.  OBJECTIVE STATEMENT
 
-The players should feel excitement (passionate frenzy?)  while trying to out-speed their opponent.
+The players should feel frenzied excitement while trying to out-speed their opponent.
 
 Overall, we want our gameplay to be;
 
@@ -135,16 +126,29 @@ This game is designed for all ages 6+ towards the generic public. Overall this g
 
 ![[studio-wide_level-process-work.jpeg|231]]![[LEVEL.png|329]]
 
-Each player will have a base shed on either side of the map, this will be where they spawn. Within the field tools and destructible objects will spawn prompting players to assess the entire feild to figure out the fastest way to outplay their opponenent. The full field will always be in view to account for both players  vision, and to let players always know the location of their objectives since speed is the goal. The overall background (grass) and fence is simplified to further allow emphasis on the spawned objects for visual digestion.
+Each player will have a base shed on either side of the map, this will be where they spawn. Within the field tools and destructible objects will spawn prompting players to assess the entire field to figure out the fastest way to outplay their opponent. The full field will always be in view to account for both players  vision, and to let players always know the location of their objectives since speed is the goal. The overall background (grass) and fence is simplified to further allow emphasis on the spawned objects for visual digestion.
 ### ii. UI INTERFACE
 
-tbd
+Top Left of Screen -              Player 1  
+                                            “SCORE”  
+  
+Top Center of Screen -         Task:  
+                                            “Task Type”  
+  
+Top Right of Screen -           “TIME”
 
 ## 5. Resources
 
-tbd
+Pre-uploaded assets from: Mohawk mini game collection - TextMesh Pro
 
-## 6. TEAM
+Specific files: Tiny Town Tilemap  
+                      Desert Shooter Player PNG’s
+
+## 6. STORY
+
+Welcome to Moonpoint Meadows! A bustling village looking to cultivate its farm lands. You have been invited by the Mayor to join his recultivation initiative, offering varying farmers homes and lands of plot in order to boost the village’s economic exports. There’s only 1 catch: each farm plot is shared by 2 farm initiates, and who so happens to be sharing your plot with you? None other than your arch nemesis since birth!!! Ahead of you lies a battle of wits, speed, and endless willpower as you strive to out cultivate your rival!
+
+## 7. TEAM
 
 Game Team Members Include:
 
